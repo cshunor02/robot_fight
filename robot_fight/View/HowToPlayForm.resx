@@ -1,0 +1,99 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Üdv, ez itt a Robot Fight!
+
+A Robot Fight egy stratégiai csapatjáték, ahol a játékosok dobozokból álló építményeket tudnak létrehozni, melyekkel pontokat tudnak szerezni. A cél az, hogy minél több építmény elkészüljön a Játék végéig.
+
+Robot:   Játékosként te irányíthatod a robotot, a körödben megfelelő utasítás leadásával (lásd Tevékenységek). A robotod csak azt a kis sugarú kört észleli, ami a 'Játék' fül alatti beállításokban rögzítésre kerül. Miközben tevékenységet hajtasz végre, a robot kistérképén (azaz Minimapjén) eltárolásra kerülnek az addig bejárt mezők.
+
+Tevékenységek:
+	- Lépés Fel, Le, Jobbra vagy Balra:   A Robottal a megadott irányba tudsz lépni, ha lehetőséged van rá. Ha éppen egy dobozépítményt tartasz a kezedben, azok is mozognak a Robottal együtt.
+
+	- Forgás Balra vagy Jobbra:   A Robottal a megadott irányba tudsz forogni, ha lehetőséged van rá. Ha éppen egy dobozépítményt tartasz a kezedben, azok is elfordulnak a Robottal együtt.
+
+	- Tisztítás:   Egy Akadály tisztítása (az Akadály életének eggyel való csökkentése).
+
+	- Dobozok felvétele, lerakása:   A megfelelő gombokkal tudsz felvenni, illetve lerakni egy dobozt/dobozépítményt
+
+	- Dobozok összekapcsolása:   Ahhoz, hogy összekapcsolhassatok két dobozt, KÉT ROBOT utasítására van szükség, ugyanabban a körben. Az Összekapcsolás gomb megnyomása után KETTŐ koordinátát vár a játék: az ELSŐ koordináta a Robothoz képest közelebbi doboz helyzete, a MÁSODIK koordináta az adott dobozhoz képesti szomszédos doboz koordinátája. A megfelelő koordináták és utasítás megadásával a két doboz összekapcsolódik, így együtt szállítható.
+
+	- Dobozok szétkapcsolása:   A Szétkapcsolás gomb megnyomása után a játék KETTŐ koordinátát vár: az ELSŐ koordináta a Robothoz képest közelebbi doboz helyzete, a MÁSODIK koordináta az adott dobozhoz képesti szomszédos doboz koordinátája. A megfelelő koordináták és utasítás megadásával a két doboz szétkapcsolódik.
+
+	- Freeze:   Opcionális Tevékenység, ha a Robot felvette a Freeze képességet. A Robot az előtte lévő másik Robotot le tudja fagyasztani 3 kör erejéig, ami alatt a játékos nem tud Tevékenységet végrehajtani.
+
+Egy Tevékenység végrehajtása sikertelen, ha a végrehajtás során
+	- a Robot, vagy a kezében tartott dobozok Akadályba ütköznek
+	- két Robot ugyanazon műveletet hajtanák végre egy mezőn (ez alól kivétel az Összekapcsolás)
+	- ha két vagy több Robot is rá van kapcsolódva egy dobozra/dobozépítményre, és ellenkező irányba próbálnak lépni/forogni
+	
+
+Minimap:   Minden mező ahol járt a robot és látta, eltárolja az adatait. Ha egy robot találkozik egy csapattársával (ami a játékban a Robot szemének színével van jelölve), akkor a két robot térképe szinkronizálódik, és mindkettejük térképe kiegészül a legfrissebb adatokkal.
+
+Kommunikáció:   A játékosok közötti kommunikáció fontos szerepet játszik a stratégiák kidolgozásában és a feladatok megoldásában. Az észlelt információk alapján a játékosok üzeneteket küldhetnek egymásnak a Kommunikátorral, ahol megadhatod milyen színű építményekkel dolgozol, melyik feladatot oldod éppen, és még azt is, hogy melyik kijárathoz viszed a megoldásodat!
+
+Játék vége:   A játék meghatározott lépésig tart, a lépések letelte után a legtöbb pontot gyűjtő csapat nyeri a játékot, és lehetőség van új játék indítására.
+
+Kommunikálj csapattársaiddal, és használd ki a képességeket, amelyek segíthetnek a játék során. Dolgozzátok ki a megfelelő stratégiát és taktikákat, hogy minél több építményt hozzatok létre és teljesítsétek a feladatokat.
+
+Kellemes játékot kíván:
+Az Akácméz csapata</value>
+  </data>
+</root>
